@@ -22,7 +22,7 @@ ENV/
 db.sqlite3
 db.sqlite3-journal
 /media
-# /staticfiles_build
+/staticfiles_build
 /staticfiles
 local_settings.py
 

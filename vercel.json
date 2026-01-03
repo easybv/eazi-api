@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "pip install -r requirements.txt && python3 manage.py collectstatic --noinput",
+  "buildCommand": "pip3 install -r requirements.txt && python3 manage.py collectstatic --noinput",
   "builds": [
     {
       "src": "bank_app/wsgi.py",
@@ -12,10 +12,6 @@
     }
   ],
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "staticfiles_build/static/$1"
-    },
     {
       "src": "/(.*)",
       "dest": "bank_app/wsgi.py"
