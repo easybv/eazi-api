@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "buildCommand": "pip install -r requirements.txt && python3 manage.py collectstatic --noinput",
+  "builds": [
+    {
+      "src": "bank_app/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.12.0"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "staticfiles_build/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "bank_app/wsgi.py"
+    }
+  ]
+}
